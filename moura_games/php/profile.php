@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('conexao.php'); // Verifique o caminho correto para o arquivo de conexão
+include('../php/conexao.php'); // Verifique o caminho correto para o arquivo de conexão
 
 // Verificar se o usuário está logado
 if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
@@ -76,14 +76,14 @@ if (!$username) {
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../index.php">MouraGames</a>
+            <a class="navbar-brand" href="../index.html">MouraGames</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.php"><i class="fa-solid fa-house"></i> Home</a>
+                        <a class="nav-link" href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../index.php#novidades"><i class="fa-solid fa-star"></i> Novidades</a>

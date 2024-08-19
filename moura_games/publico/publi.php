@@ -19,10 +19,11 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
-} else {
-    $username = null;
-    $profile_picture = 'default-avatar.png';
 }
+    else {
+        $username = null;
+        $profile_picture = 'default-avatar.png';
+    }
 ?>
 
 <!DOCTYPE html>
@@ -30,16 +31,16 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - MouraGames</title>
+    <title>MouraGames</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="./assets/css/estilo.css">
+    <link rel="stylesheet" href="./assets/css/estilo.css"> <!-- Atualize o caminho se necessário -->
     <link rel="icon" type="image/x-icon" href="./assets/img/M_do_moura.ico">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./index.html">MouraGames</a>
+            <a class="navbar-brand" href="index.html">MouraGames</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -85,34 +86,14 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     </nav>
 
     <main>
-        <section class="container mt-5">
-            <h1>Cadastrar Novo Usuário</h1>
-            <form action="php/register_process.php" method="post" enctype="multipart/form-data" class="auth-form">
-                <label for="username">Usuário:</label>
-                <input type="text" id="username" name="username" required>
+        <section id="home" class="container mt-5">
+            <h1>Bem-vindo à Página Principal</h1>
+            <p>Conteúdo da página inicial.</p>
+        </section>
 
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
-
-                <label for="confirm_password">Confirmar Senha:</label>
-                <input type="password" id="confirm_password" name="confirm_password" required>
-
-                <label for="profile_picture">Foto de Perfil:</label>
-                <input type="file" id="profile_picture" name="profile_picture" accept="image/*">
-
-                <button type="submit" class="auth-btn">Cadastrar</button>
-
-                <?php
-                if (isset($_GET['error'])) {
-                    echo '<p class="error-message">Erro ao cadastrar. Verifique os dados e tente novamente.</p>';
-                } elseif (isset($_GET['success'])) {
-                    echo '<p class="success-message">Cadastro realizado com sucesso!</p>';
-                }
-                ?>
-            </form>
+        <section id="novidades" class="container mt-5">
+            <h2>Novidades</h2>
+            <p>Conteúdo das novidades.</p>
         </section>
     </main>
 
@@ -124,6 +105,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./assets/js/scripts.js"></script>
+    <script src="./assets/js/scripts.js"></script> <!-- Atualize o caminho se necessário -->
 </body>
 </html>

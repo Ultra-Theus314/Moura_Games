@@ -5,7 +5,7 @@ include('php/conexao.php'); // Inclua o arquivo de conexão
 // Verificar se o usuário está logado e obter as informações do usuário
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     $userId = $_SESSION['userid'];
-    $sql = "SELECT username, profile_picture FROM users WHERE id = ?";
+    $sql = "SELECT username, profile_picture FROM moura_games.tb_clientes WHERE id = ?";
     $stmt = mysqli_prepare($conn, $sql);
     
     if (!$stmt) {
@@ -39,7 +39,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">MouraGames</a>
+            <a class="navbar-brand" href="./index.html">MouraGames</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
