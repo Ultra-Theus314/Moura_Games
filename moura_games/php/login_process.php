@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['username'] = $row['USERNAME'];
             $_SESSION['email'] = $row['EMAIL']; // Certifique-se de que o e-mail está disponível
             $_SESSION['online'] = true; // Defina o status de online aqui (geralmente gerenciado dinamicamente)
-            header("Location: ../privado/priv.php.?login=SUCCESS");
+            header("Location: ../private/priv.php.?login=SUCCESS");
         } else {
             header("Location: ../login.php?error=WRONGPASSWORD");
         }
