@@ -15,7 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = mysqli_prepare($conn, $sql);
 
     if (!$stmt) {
-        // Handle error in statement preparation
         die("ERRO NA PREPARAÇÃO DA CONSULTA: " . mysqli_error($conn));
     }
 
@@ -30,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['username'] = $row['USERNAME'];
             $_SESSION['email'] = $row['EMAIL']; // Certifique-se de que o e-mail está disponível
             $_SESSION['online'] = true; // Defina o status de online aqui (geralmente gerenciado dinamicamente)
-            header("Location: ../private/priv.php.?login=SUCCESS");
+            header("Location: ../private/priv.php");
         } else {
             header("Location: ../login.php?error=WRONGPASSWORD");
         }

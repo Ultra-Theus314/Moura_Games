@@ -9,7 +9,7 @@
     <main>
         <section class="container mt-5">
             <h1>Iniciar Sessão</h1>
-            <form action="php/login_process.php" method="post" class="auth-form">
+            <form action="php/login_process.php" target="_self" method="post" class="auth-form">
                 <label for="username">Usuário:</label>
                 <input type="text" id="username" name="username" required>
 
@@ -25,7 +25,6 @@
                 ?>
             </form>
         </section>
-    </main>
-
+    </main>  
 </body>
 </html>
