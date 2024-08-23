@@ -14,6 +14,12 @@ header, footer {
   padding: 10px 20px;
 }
 
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 nav ul {
   list-style-type: none;
   padding: 0;
@@ -27,16 +33,12 @@ nav ul li {
 }
 
 .nav-link {
-  color: white;
-  text-decoration: none;
-  padding: 10px 15px;
-  display: flex;
-  align-items: center;
+  color: white !important; /* Altera a cor das letras */
+  font-size: 1.2rem; /* Altera o tamanho da fonte */
 }
 
 .nav-link:hover {
-  background-color: #495057; /* Cor de fundo ao passar o mouse */
-  border-radius: 5px;
+  color: #ddd !important; /* Altera a cor das letras ao passar o mouse */
 }
 
 .dropdown {

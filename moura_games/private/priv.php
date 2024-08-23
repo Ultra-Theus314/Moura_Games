@@ -48,16 +48,14 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="#home"  onclick="loadPagePrivate('priv.php')"><i class="fa-solid fa-house"></i> Home </a>
+                <a class="nav-link" href="#home"  onclick="loadPagePrivate('../home_priv.php')"><i class="fa-solid fa-house"></i> Home </a>
             </li>                 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownGames" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa-solid fa-gamepad"></i> Jogos
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownGames">
-                    <li><a class="dropdown-item" href="#" onclick="loadPagePrivate('../jogos.php')"><i class="fa-solid fa-gamepad"></i> Jogos em Destaque</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="loadPagePriv('consoles.php')"><i class="fa-solid fa-tv"></i> Consoles</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="loadPagePriv('acessorios.php')"><i class="fa-solid fa-cogs"></i> Acessórios</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="loadPagePrivate('../consoles.php')"><i class="fa-solid fa-tv"></i> Consoles</a></li>
                 </ul>
             </li>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -81,7 +79,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
 </div>
 </nav>
             <div id="content" class="content">
-                <!-- Conteúdo dinâmico será carregado aqui -->
+             <!-- Conteúdo dinâmico será carregado aqui -->
             </div>
     <footer class="bg-dark text-white text-center py-3 mt-3">
         <div class="container">

@@ -1,4 +1,3 @@
-
 function loadPagePublic(page) {
     const content = document.getElementById('content');
     fetch(`public/${page}`)
