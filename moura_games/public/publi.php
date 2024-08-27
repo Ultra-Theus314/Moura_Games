@@ -11,7 +11,11 @@
             <h1>Bem-vindo à Página Principal</h1>
             <p>Conteúdo da página inicial.</p>
         </section>
-
+        <section>
+        <div class="bruce">
+            <img src="./assets/img/banner.png">
+        </div>
+        </section>
         <section id="novidades" class="container mt-5">
             <h2>Novidades</h2>
             <p>Conteúdo das novidades.</p>

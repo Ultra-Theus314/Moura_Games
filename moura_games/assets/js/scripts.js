@@ -53,3 +53,65 @@ function showSection(id) {
         }
     });
 ;
+
+function navigate(page) 
+{
+  const content = document.getElementById('content');
+  if (page === 'cadastrar') 
+  {
+      content.innerHTML = `
+          <div class="container_jogos">
+          <section>
+            <h2>Cadastrar Produto</h2>
+            <hr>
+            <form id="ProdForm">
+            <label for="produto">Produto:</label>
+            <input type="text" id="produto" name="produto" placeholder="Digite o nome do produto aqui..." required>
+            <label for="tipo">Tipo:</label>
+                <select name="tipo" id="tipo">
+                <option value="GAME">JOGOS</option>
+                <option value="ARCADE">ARCADES</option>
+                <option value="CONSOLE">CONSOLE</option>
+                <option value="BONECO">MINIATURAS</option>
+                <option value="ACESSORIO">ACESSORIOS</option>
+            </select><br>
+            <label>Plataforma: <br>
+            <select name="plataforma" id="plataforma">
+                <option value="PSN">PLAYSTATION</option>
+                <option value="XBOX">XBOX</option>
+                <option value="NINTENDINHO">NINTENDO</option>
+                <option value="PC">PC</option>
+            </select><br>
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao" rows="4" placeholder="Digite a descrição aqui..." required></textarea>
+            <label for="valor">Valor:</label>
+            <input type="text" id="valor" placeholder="Digite o valor aqui..." name="valor">
+            <label for="foto">Foto:</label>
+            <input class="btn btn-primary" type="file" id="foto" name="foto">
+            <hr>
+            <input class="btn btn-primary" type="submit" name="cadastrar" value="Cadastrar" />
+            <hr>
+            </form>
+           </section>
+           </div>
+`;
+      document.getElementById('ProdForm').addEventListener('submit', function(event) 
+      {
+          event.preventDefault();
+          const formData = new FormData(this);
+          fetch('./cadastrar_jogos/inclusao.php', {
+              method: 'POST',
+              body: formData
+          }).then(response => response.text()).then(data => 
+          {
+              alert(data);
+          });
+          document.getElementById("produto").value=""
+          document.getElementById("tipo").value=""
+          document.getElementById("plataforma").value=""
+          document.getElementById("descricao").value=""
+          document.getElementById("foto").value=""
+          document.getElementById("valor").value=""
+      });
+  }
+}

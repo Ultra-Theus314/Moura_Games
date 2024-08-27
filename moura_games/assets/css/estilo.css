@@ -1,3 +1,7 @@
+* 
+{
+  font-family: 'Ubuntu', sans-serif;
+}
 /* Reset básico e estilo global */
 body, html {
   margin: 0;
@@ -167,3 +171,65 @@ footer p {
   margin: 0;
 }
 
+.bruce {
+  width: 100%;
+  max-width: 2000px; 
+  margin: 0 auto;
+  padding: 20px; 
+  text-align: center; 
+  font-size: 18px;
+  color: #333;
+  border-radius: 10px; 
+}
+
+@media only screen and (max-width: 300px) {
+  .bruce {
+    font-size: 16px; 
+    max-height: 200px; 
+  }
+}
+
+.container_jogos {
+  background-color:  #34327d; /* Tom de azul claro */
+  font-family: Arial, sans-serif;
+  color: #ffffff; /* Letras em preto */
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 40px auto; /* Adiciona margem superior para afastar do rodapé */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container_jogos h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container_jogos label {
+  display: block;
+  margin-bottom: 2px; /* Diminui o espaço entre os labels e os inputs */
+  font-weight: bold;
+}
+
+.container_jogos input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 8px; /* Espaço curto entre os inputs */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.container_jogos input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color:#9589df; /* Tom de azul mais escuro */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.container_jogos input[type="submit"]:hover {
+  background-color: #4c4896; /* Tom de azul ainda mais escuro */
+  transform: scale(1.05);
+}

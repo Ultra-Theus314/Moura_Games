@@ -33,6 +33,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/estilo.css"> 
     <link rel="icon" type="image/x-icon" href="../assets/img/M_do_moura.ico">
     <script src="../assets/js/scripts.js"></script>
@@ -64,6 +65,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
                     <i class="fa-solid fa-user"></i> Perfil
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownProfile">
+                    <li><a class="dropdown-item" href="#" onclick="navigate('cadastrar')" ><i class="fab fa-get-pocket"></i> Cadastrar</a></li>
                     <li><a class="dropdown-item" href="#" onclick="loadPagePrivate('../profile.php')"><i class="fa-solid fa-address-book"></i> Perfil</a></li>
                     <li><a class="dropdown-item" href="../php/logout.php"><i class="fa-solid fa-right-to-bracket"></i> Sair</a></li>
                 </ul>
