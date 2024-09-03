@@ -33,54 +33,11 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Perfil</title>
-    <style>
-        .avatar-container {
-            position: relative;
-            display: inline-block;
-        }
-        .avatar-container img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 3px solid #fff;
-        }
-        .avatar-container .status-indicator {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: green;
-            border: 2px solid #fff;
-        }
-        .profile-content {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            max-width: 600px;
-            margin: auto;
-        }
-        .profile-info-container {
-            margin-left: 20px;
-        }
-        .profile-info-container h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-        .profile-info-container p {
-            margin: 5px 0;
-            font-size: 16px;
-            color: #666;
-        }
-    </style>
 </head>
 <body>
     <div class="profile-content">
         <div class="avatar-container">
-            <img src="<?php echo htmlspecialchars($profile_picture); ?>">
+            <img src="../uploads/<?php echo htmlspecialchars($profile_picture); ?>">
             <div class="status-indicator"></div>
         </div>
         <div class="profile-info-container">

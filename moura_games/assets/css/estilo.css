@@ -2,15 +2,36 @@
 {
   font-family: 'Ubuntu', sans-serif;
 }
-/* Reset básico e estilo global */
-body, html {
+
+/* Estilo padrão para PC */
+body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  min-height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-image: url('../img/Neon.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
+
+
+
+/* Estilo para tablets */
+@media only screen and (max-width: 768px) {
+  body {
+      background-image: url('../img/Gojo.jpg');
+  }
+}
+
+/* Estilo para dispositivos móveis */
+@media only screen and (max-width: 480px) {
+  body {
+      background-image: url('../img/Gojo.jpg');
+  }
+} 
 
 header, footer {
   background-color: #343a40; /* Cor de fundo do header e footer */
@@ -192,7 +213,7 @@ footer p {
 .container_jogos {
   background-color:  #34327d; /* Tom de azul claro */
   font-family: Arial, sans-serif;
-  color: #ffffff; /* Letras em preto */
+  color: #000000; /* Letras em preto */
   padding: 20px;
   border-radius: 8px;
   max-width: 400px;
@@ -232,4 +253,192 @@ footer p {
 .container_jogos input[type="submit"]:hover {
   background-color: #4c4896; /* Tom de azul ainda mais escuro */
   transform: scale(1.05);
+}
+
+.avatar-container {
+  position: relative;
+  display: inline-block;
+  background-color: #34327d; /* Tom de azul claro */
+}
+
+.avatar-container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #000; /* Borda preta */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.avatar-container img:hover {
+  transform: scale(1.1);
+}
+
+.avatar-container .status-indicator {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: green;
+  border: 2px solid #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.profile-content {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+  background-color: #34327d; /* Tom de azul claro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.profile-content:hover {
+  background-color: #2e2c6e; /* Tom de azul mais escuro ao passar o mouse */
+}
+
+.profile-info-container {
+  margin-left: 20px;
+  background-color: #fff; /* Sub-container branco */
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info-container h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.profile-info-container p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #666;
+}
+
+/* Cartão de produto */
+.card {
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  text-align: center;
+  background-color: #34327d;;
+  color: #fafafa;
+  margin: 10px; /* Adiciona um espaço pequeno ao redor de cada card */
+}
+
+.card-type {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ff0000; /* Azul para destacar, ajuste conforme necessário */
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-bottom-right-radius: 8px; /* Arredondamento na parte inferior direita */
+  z-index: 1; /* Garante que o tipo fique sobre a imagem */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .card_mobile {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.card-new {
+  background-color: #0bf117; /* Amarelo para destacar "Novidades" */
+  color: #fff;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  margin-left: 10px;
+  padding: 3px 6px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+.card-body {
+  padding: 20px; /* Manter o padding para o conteúdo interno */
+  padding-top: 40px; /* Ajuste para que o conteúdo não fique sobre o tipo */
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.card-text {
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.card-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #28a745; /* Verde para destacar o preço, ajuste conforme necessário */
+  margin: 10px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 0.875rem;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+/* Estilos do container de jogos */
+.container_jogos {
+  background-color: #34327d; /* Tom de azul claro */
+  font-family: Arial, sans-serif;
+  color: #000000; /* Letras em preto */
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 40px auto; /* Adiciona margem superior para afastar do rodapé */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container_jogos h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container_jogos label {
+  display: block;
+  margin-bottom: 2px; /* Diminui o espaço entre os labels e os inputs */
+  font-weight: bold;
+}
+
+.container_jogos input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }

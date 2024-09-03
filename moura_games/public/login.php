@@ -7,7 +7,7 @@
 </head>
 <body>
     <main>
-        <section class="container mt-5">
+        <section class="container_jogos">
             <h1>Iniciar Sessão</h1>
             <form action="php/login_process.php" target="_self" method="post" class="auth-form">
                 <label for="username">Usuário:</label>

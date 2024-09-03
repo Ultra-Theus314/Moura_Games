@@ -33,7 +33,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/estilo.css"> 
     <link rel="icon" type="image/x-icon" href="../assets/img/M_do_moura.ico">
     <script src="../assets/js/scripts.js"></script>
@@ -69,7 +68,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
                     <li><a class="dropdown-item" href="#" onclick="loadPagePrivate('../profile.php')"><i class="fa-solid fa-address-book"></i> Perfil</a></li>
                     <li><a class="dropdown-item" href="../php/logout.php"><i class="fa-solid fa-right-to-bracket"></i> Sair</a></li>
                 </ul>
-            </li>   
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link" href="#sobre" onclick="loadPagePrivate('../sobre.php')"><i class="fa-solid fa-info-circle"></i> Sobre</a>
+            </li>  
             <li class="nav-item">
                 <form class="d-flex ms-2" role="search">
                     <input class="form-control me-2" type="search" placeholder="Buscar jogos" aria-label="Search">
@@ -86,7 +88,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     <footer class="bg-dark text-white text-center py-3 mt-3">
         <div class="container">
             <p class="mb-0">© 2024 MouraGames - Todos os direitos reservados</p>
-            <p class="mb-0">Encontre os melhores jogos e promoções exclusivas para você.</p>
         </div>
     </footer>
 </body>

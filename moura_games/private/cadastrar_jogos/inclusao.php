@@ -9,8 +9,7 @@
             $descricao = $_POST["descricao"];
             $foto = $_FILES["foto"];
             $valor = $_POST["valor"];
-
-            $target_dir = "../../assets/img";
+            $target_dir = "../../assets/img/cards/";
             $target_file = $target_dir . basename($_FILES["foto"]["name"]);
             $uploadOk = 1;
             $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -61,9 +60,9 @@
             {
               if (move_uploaded_file($_FILES["foto"]["tmp_name"], $target_file)) {
                 echo "A foto". htmlspecialchars( basename( $_FILES["foto"]["name"])). " Foi enviado com sucesso.";
-                $fotocapa=$_FILES["foto"]["name"];
+                $foto=$_FILES["foto"]["name"];
                 // Insere os dados no banco
-                $sql = "INSERT INTO moura_games.tb_produtos (produto, tipo, plataforma, descricao, foto, valor) VALUES ('$produto', '$tipo', '$plataforma', '$descricao', '$fotocapa','$valor')";
+                $sql = "INSERT INTO moura_games.tb_produtos (produto, tipo, plataforma, descricao, foto, valor) VALUES ('$produto', '$tipo', '$plataforma', '$descricao', '$foto','$valor')";
             
                     if ($conn->query($sql) === TRUE) 
                         {

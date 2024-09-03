@@ -7,7 +7,7 @@
 </head>
 <body>
     <main>
-        <section class="container mt-5">
+        <section class="container_jogos">
             <h1>Cadastrar Novo Usuário</h1>
             <form action="php/register_process.php" method="post" enctype="multipart/form-data" class="auth-form">
                 <label for="username">Usuário:</label>
