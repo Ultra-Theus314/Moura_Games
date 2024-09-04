@@ -39,7 +39,7 @@ if ($result->num_rows > 0) {
                 <p class="card-text"><?php echo $descricao; ?></p>
                 <p class="card-price"><?php echo $valor; ?></p>
                 <a class="btn btn-warning" href="alterar.php?id=<?php echo $id; ?>">Alterar</a>
-                <a href="#" class="btn btn-success">Deletar</a>      
+                <a href="#" class="btn btn-success" onclick="loadPagePrivate('../cadastrar_jogos/deletar.php')">Deletar</a>      
             </div>
         </div>
 
@@ -56,4 +56,3 @@ else
 // Fechar conexão com o Banco de Dados
 $conn->close();
 ?>
-
