@@ -8,7 +8,7 @@ if (!isset($conn)) {
 }
 
 // Comando SQL para listagem dos registros vindos do MySQL em ordem crescente
-$consulta = "SELECT ID, PRODUTO, TIPO, PLATAFORMA, DESCRICAO, FOTO, CONCAT('R$ ', FORMAT(VALOR, 2, 'pt_BR')) AS VALOR_FORMATADO FROM moura_games.tb_produtos ORDER BY ID DESC";
+$consulta = "SELECT ID, PRODUTO, TIPO, PLATAFORMA, DESCRICAO, FOTO, CONCAT('R$ ', FORMAT(VALOR, 2, 'pt_BR')) AS VALOR_FORMATADO FROM moura_games.tb_produtos ORDER BY PLATAFORMA, ID DESC";
 
 // Executa a consulta
 $result = $conn->query($consulta);
@@ -20,16 +20,28 @@ if ($result === false) {
 
 // Caso o banco de dados retorne 1 linha ou mais
 if ($result->num_rows > 0) {
-    echo '<div class="row">';
+    $currentPlatform = '';
     // Loop para listar os produtos
-    while ($row = $result->fetch_assoc()) 
-    {
+    while ($row = $result->fetch_assoc()) {
         $foto = htmlspecialchars($row["FOTO"]);
         $produto = htmlspecialchars($row["PRODUTO"]);
         $plataforma = htmlspecialchars($row["PLATAFORMA"]);
         $descricao = htmlspecialchars($row["DESCRICAO"]);
         $valor = htmlspecialchars($row["VALOR_FORMATADO"]);
         $id = $row["ID"];
+
+        // Verifica se a plataforma mudou
+        if ($plataforma !== $currentPlatform) {
+            // Fecha a div anterior, se houver
+            if ($currentPlatform !== '') {
+                echo '</div>';
+            }
+            // Atualiza a plataforma atual
+            $currentPlatform = $plataforma;
+            // Exibe o título da plataforma
+            echo '<h2>' . $currentPlatform . '</h2>';
+            echo '<div class="row">';
+        }
 ?>
         <div class="card">
             <!-- Exibe a imagem com o caminho completo -->
@@ -42,17 +54,11 @@ if ($result->num_rows > 0) {
                 <a href="#" class="btn btn-success" onclick="loadPagePrivate('../cadastrar_jogos/deletar.php')">Deletar</a>      
             </div>
         </div>
-
 <?php
+    }
+    // Fecha a última div
+    echo '</div>';
+} else {
+    echo "Nenhum produto encontrado.";
 }
-    echo '</div>'; // Fecha a div com a classe row
-} 
-else 
-{
-    // Em caso de tabela vazia, exibe mensagem
-    echo '<div class="alert alert-warning" role="alert">Nenhuma informação retornada do Banco de Dados.</div>';
-}
-
-// Fechar conexão com o Banco de Dados
-$conn->close();
 ?>

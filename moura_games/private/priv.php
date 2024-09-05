@@ -52,12 +52,12 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
             </li>                 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownGames" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-gamepad"></i> Jogos
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownGames">
-                    <li><a class="dropdown-item" href="#" onclick="loadPagePrivate('../consoles.php')"><i class="fa-solid fa-tv"></i> Consoles</a></li>
-                </ul>
-            </li>
+            <i class="fa-solid fa-gamepad"></i> Jogos
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownGames">
+                <li><a class="dropdown-item" href="#" onclick="loadPagePrivate('../consoles.php')"><i class="fa-solid fa-tv"></i> Plataformas </a></li>
+            </ul>
+            </li> 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProfile" role="button" data-bs-toggle="dropdown" aria-expanded="false">

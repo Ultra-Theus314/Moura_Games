@@ -370,6 +370,12 @@ footer p {
   }
 }
 
+h2 {
+  color: #fafafa;
+  text-align: center; /* Centraliza o texto */
+}
+
+
 .card-new {
   background-color: #0bf117; /* Amarelo para destacar "Novidades" */
   color: #fff;
@@ -380,9 +386,11 @@ footer p {
 }
 
 .card-img-top {
-  width: 100%;
-  height: auto;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
 }
+
 
 .card-body {
   padding: 20px; /* Manter o padding para o conteúdo interno */

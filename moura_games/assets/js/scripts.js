@@ -79,7 +79,7 @@ function navigate(page)
             <select name="plataforma" id="plataforma">
                 <option value="PSN">PLAYSTATION</option>
                 <option value="XBOX">XBOX</option>
-                <option value="NINTENDINHO">NINTENDO</option>
+                <option value="NINTENDO">NINTENDO</option>
                 <option value="PC">PC</option>
             </select><br>
             <label for="descricao">Descrição:</label>

@@ -36,28 +36,33 @@ mysqli_close($conn);
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <style>
-    .navbar-nav {
-      display: flex;
-      justify-content: center; /* Centraliza horizontalmente */
-      width: 100%;
-    }
-    .nav-link {
-      color: white !important; /* Altera a cor das letras */
-      font-size: 1.2rem; /* Altera o tamanho da fonte */
-    }
-    .nav-link:hover {
-      color: #ddd !important; /* Altera a cor das letras ao passar o mouse */
-    }
-    .dropdown-menu {
-      background-color: #343a40; /* Cor de fundo do dropdown */
-    }
-    .dropdown-item {
-      color: white; /* Cor das letras do item do dropdown */
-    }
-    .dropdown-item:hover {
-      background-color: #495057; /* Cor de fundo do item do dropdown ao passar o mouse */
-    }
-  </style>
+  .navbar-nav {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    width: 100%;
+  }
+  .nav-link {
+    color: white !important; /* Altera a cor das letras */
+    font-size: 1.2rem; /* Altera o tamanho da fonte */
+  }
+  .nav-link:hover {
+    color: #ddd !important; /* Altera a cor das letras ao passar o mouse */
+  }
+  .dropdown-menu {
+    background-color: #343a40; /* Cor de fundo do dropdown */
+    z-index: 1; /* Garante que o dropdown fique abaixo dos cards */
+  }
+  .dropdown-item {
+    color: white; /* Cor das letras do item do dropdown */
+  }
+  .dropdown-item:hover {
+    background-color: #495057; /* Cor de fundo do item do dropdown ao passar o mouse */
+  }
+  .card {
+    z-index: 2; /* Garante que os cards fiquem acima do dropdown */
+    margin-top: 20px; /* Ajusta a margem superior dos cards */
+  }
+</style>
 </head>
 <body>
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -68,19 +73,13 @@ mysqli_close($conn);
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#" onclick="loadPagePrivate('../cadastrar_jogos/listar.php')"><i class="fa-solid fa-gamepad"></i> Playstation</a>
+            <a class="nav-link" href="#" onclick="loadPagePrivate('../cadastrar_jogos/listar.php')"><i class="fa-solid fa-gamepad"></i> Consoles </a>
+          </li>
+          <li>
+            <a class="nav-link" href="#"><i class="fa-solid fa-laptop"></i> PC </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa-solid fa-gamepad"></i> Xbox</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa-solid fa-gamepad"></i> Nintendo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa-solid fa-laptop"></i> PC</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fab fa-simplybuilt"></i> Colecionáveis</a>
+            <a class="nav-link" href="#"><i class="fab fa-simplybuilt"></i> Colecionáveis </a>
           </li>
         </ul>
       </div>
