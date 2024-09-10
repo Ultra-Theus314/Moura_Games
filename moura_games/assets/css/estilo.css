@@ -5,31 +5,33 @@
 
 /* Estilo padrão para PC */
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
-  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+  color: #333;
   display: flex;
   flex-direction: column;
-  background-image: url('../img/Neon.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  min-height: 100vh;
+  background-image: url('../img/Fundo.jpeg');
+  background-size: cover; /* Faz a imagem cobrir todo o fundo da página */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Impede a repetição da imagem */
+  background-attachment: fixed; /* Faz a imagem de fundo ficar fixa */
 }
-
-
 
 /* Estilo para tablets */
 @media only screen and (max-width: 768px) {
   body {
-      background-image: url('../img/Gojo.jpg');
+      background-image: url('../img/Fundo.jpeg');
   }
 }
 
 /* Estilo para dispositivos móveis */
 @media only screen and (max-width: 480px) {
   body {
-      background-image: url('../img/Gojo.jpg');
+      background-image: url('../img/Fundo.jpeg');
   }
 } 
 
@@ -192,6 +194,11 @@ footer p {
   margin: 0;
 }
 
+.traco {
+  color: #fafafa;
+  height: 50px;
+}
+
 .bruce {
   width: 100%;
   max-width: 2000px; 
@@ -333,6 +340,12 @@ footer p {
   color: #666;
 }
 
+.carousel-inner img {
+  width: 100%;
+  height: 500px; /* Defina a altura desejada para suas imagens */
+  object-fit: cover; /* Garante que a imagem cubra o contêiner, mantendo a proporção */
+}
+
 /* Cartão de produto */
 .card {
   width: 300px;
@@ -437,7 +450,7 @@ h2 {
   color: #000000; /* Letras em preto */
   padding: 20px;
   border-radius: 8px;
-  max-width: 400px;
+  max-width: 450px;
   margin: 40px auto; /* Adiciona margem superior para afastar do rodapé */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

@@ -1,67 +1,44 @@
 <?php
-// Chama arquivo externo de conexão com o Banco de Dados.
+header('Content-Type: application/json');
+
+// Incluindo arquivo de conexão com o banco de dados
 include("../../php/conexao.php");
 
-// Verifica se o parâmetro 'ID' está definido na URL
-if (isset($_GET['ID'])) {
-    $id_produto = intval($_GET['ID']); // Converte o ID para inteiro para evitar SQL Injection
+// Obtendo o ID do corpo da requisição POST
+$id = $_POST['id'] ?? '';
+if (empty($id)) {
+    echo json_encode(['success' => false, 'error' => 'ID inválido']);
+    exit;
+}
 
-    // Consulta para selecionar o produto usando prepared statements
-    $stmt = $conn->prepare("SELECT * FROM moura_games.tb_produtos WHERE id = $id_produto");
-    $stmt->bind_param("i", $id); // "i" indica que o parâmetro é um inteiro
-    $stmt->execute();
-    $result = $stmt->get_result();
+// Usando prepared statements para evitar SQL Injection
+$stmt = $conn->prepare("SELECT FOTO FROM moura_games.tb_produtos WHERE id = ?");
+$stmt->bind_param('i', $id);
+$stmt->execute();
+$result = $stmt->get_result();
 
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            // Exibe os dados do produto (você pode personalizar esta parte)
-            echo "<h2>Produto: " . htmlspecialchars($row['nome']) . "</h2>";
-            echo "<p>Descrição: " . htmlspecialchars($row['descricao']) . "</p>";
-            echo "<p>Preço: " . htmlspecialchars($row['preco']) . "</p>";
+if ($result->num_rows > 0) {
+    // Removendo imagem da pasta fotos/
+    while ($row = $result->fetch_assoc()) {
+        $foto = "../../../assets/img/cards/" . $row["FOTO"];
+        if (file_exists($foto)) {
+            unlink($foto);
         }
-
-        // Exibe o formulário de confirmação
-        echo '
-        <form method="post">
-            <input type="hidden" name="ID" value="' . htmlspecialchars($id) . '">
-            <input type="submit" name="confirmar" value="Confirmar Exclusão">
-        </form>';
-    } else {
-        echo "Produto não encontrado.";
     }
+}
 
-    // Verifica se o formulário de confirmação foi enviado
-    if (isset($_POST['confirmar']) && isset($_POST['ID'])) {
-        // SQL para deletar o registro usando prepared statements
-        $id = intval($_POST['ID']); // Garante que o ID seja um número inteiro
-        $stmt = $conn->prepare("DELETE FROM moura_games.tb_produtos WHERE id = ?");
-        $stmt->bind_param("i", $id); // "i" indica que o parâmetro é um inteiro
+// Deletando o produto
+$stmt = $conn->prepare("DELETE FROM moura_games.tb_produtos WHERE id = ?");
+$stmt->bind_param('i', $id);
 
-        if ($stmt->execute()) {
-            echo "<script>alert('Registro $id apagado com sucesso!');</script>";
-            // Redireciona para a página de listagem de produtos
-            echo "<script>window.location.href = './listar_prod.php';</script>";
-        } else {
-            echo "Erro ao apagar o registro: " . $conn->error;
-        }
-        $stmt->close();
-    }
+if ($stmt->execute()) {
+    echo json_encode(['success' => true]);
+} else {
+    echo json_encode(['success' => false, 'error' => 'Falha ao deletar o produto']);
+}
 
-    $conn->close();
-} 
+// Fechando a conexão com o banco de dados
+$stmt->close();
+$conn->close();
 ?>
-<!-- Formulário de confirmação -->
-<body>
-<div class="container_jogos">
-        <h2>Confirmação</h2>
-        <p>Tem certeza que deseja deletar o produto?</p>
-        <form method="post">
-            <div class="button-container">
-                <button type="submit" name="confirmar" class="submit-button">Sim</button>
-                <button type="button" class="cancel-button" onclick="loadPagePrivate('../cadastrar_jogos/listar.php')">Não</button>
-            </div>
-        </form>
-    </div>
-</body>
-</html>
 

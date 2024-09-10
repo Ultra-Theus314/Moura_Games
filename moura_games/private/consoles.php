@@ -24,7 +24,6 @@ mysqli_stmt_bind_result($stmt, $username, $email, $profile_picture);
 mysqli_stmt_fetch($stmt);
 
 mysqli_stmt_close($stmt);
-mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
@@ -65,25 +64,18 @@ mysqli_close($conn);
 </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <!-- Removido o botão navbar-toggler -->
+      <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="#" onclick="loadPagePrivate('../cadastrar_jogos/listar.php')"><i class="fa-solid fa-gamepad"></i> Consoles </a>
           </li>
-          <li>
-            <a class="nav-link" href="#"><i class="fa-solid fa-laptop"></i> PC </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fab fa-simplybuilt"></i> Colecionáveis </a>
-          </li>
         </ul>
       </div>
     </div>
-  </nav>
+</nav>
+
 </body>
 </html>

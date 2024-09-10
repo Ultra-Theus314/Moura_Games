@@ -14,17 +14,17 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" onclick="loadPagePublic('publi.php')" >MouraGames</a>
+            <a class="navbar-brand" href="#" onclick="loadPagePublic('home_pub.php')" >MouraGames</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#home"><i class="fa-solid fa-house"></i> Home </a>
+                        <a class="nav-link" href="#home" onclick="loadPagePublic('home_pub.php')"><i class="fa-solid fa-house"></i> Home </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#novidades"><i class="fa-solid fa-star"></i> Novidades </a>
+                        <a class="nav-link" href="#novidades" onclick="loadPagePublic('new.php')"><i class="fa-solid fa-star"></i> Novidades </a>
                     </li>               
                     <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,13 +49,49 @@
             </div>
         </div>
     </nav>
+
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+        <img src="./assets/img/carrosel.jpg" class="d-block">
+        <div class="carousel-caption">
+    </div>
+    </div>
+    <div class="carousel-item">
+        <img src="./assets/img/psn.jpg" class="d-block">
+        <div class="carousel-caption">
+    </div> 
+    </div>
+    <div class="carousel-item">
+        <img src="./assets/img/nintendo.jpg" class="d-block">
+        <div class="carousel-caption">
+        </div>  
+    </div>
+    </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+</div>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>       
     <div id="content" class="content">
+        
         <!-- Conteúdo dinâmico será carregado aqui -->
     </div>
-    <footer class="bg-dark text-white text-center py-3 mt-3">
-        <div class="container">
-            <p class="mb-0">© 2024 MouraGames - Todos os direitos reservados</p>
-        </div>
-    </footer>
+<br>
+<br>  
+<br>  
+<footer class="bg-dark text-white text-center py-3 mt-3">
+    <div class="container">
+        <p class="mb-0">© 2024 MouraGames - Todos os direitos reservados</p>
+    </div>
+</footer>
 </body>
 </html>
