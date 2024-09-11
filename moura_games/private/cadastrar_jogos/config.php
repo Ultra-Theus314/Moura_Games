@@ -11,18 +11,18 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
+$dbname = "moura_games";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password);
+// Criar conexão
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
-if ($conn->connect_error) 
-  {
-    echo ("Falha na conexão: " . $conn->connect_error);
-  }
-  
-// Comando SQL para listagem dos registros vindos do MySQL em ordem decrescente
-$consulta = "SELECT * FROM moura_games.tb_produtos ORDER BY ID DESC";
+// Verificar conexão
+if ($conn->connect_error) {
+    die("Falha na conexão: " . $conn->connect_error);
+}
+
+// Comando SQL para listagem dos registros
+$consulta = "SELECT * FROM tb_produtos ORDER BY ID DESC";
 
 // Guarda dados retornados em um array (matriz)
 $result = $conn->query($consulta);
@@ -32,6 +32,7 @@ if ($result === false) {
     die("Erro na consulta: " . $conn->error);
 }
 ?>
+
 
 <section class="containerGL">
     <div class="product-grid">
@@ -89,17 +90,3 @@ if ($result === false) {
         </div>
     </div>
 </div>
-<style>
-/* Certifique-se de que o modal ocupa a largura total da tela se necessário */
-
-/* Estilize o conteúdo do modal para que fique bem posicionado */
-.modal-content {
-    padding: 1rem; /* Adiciona um pouco de espaçamento interno */
-}
-
-/* Formulário centralizado dentro do modal */
-.containerFormat{
-    max-width: 100%; /* Certifique-se de que o formulário não exceda a largura do modal */
-    margin: 0 auto;
-}
-</style>

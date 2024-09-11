@@ -1,13 +1,25 @@
 <?php
     // Recebe o id para ser atualizado
+    if (!isset($_GET['id'])) {
+        die("ID não fornecido.");
+    }
     $id = $_GET['id'];
 
     // Chamada de conexão com o Banco de Dados
     include("../../php/conexao.php");
 
+    // Verifica se a conexão foi bem-sucedida
+    if (!$conn) {
+        die("Falha na conexão com o banco de dados.");
+    }
+
     // Comando SQL para selecionar o produto com base no ID
     $consulta = "SELECT * FROM moura_games.tb_produtos WHERE id=?";
     $stmt = $conn->prepare($consulta);
+    if (!$stmt) {
+        die("Falha ao preparar a consulta: " . $conn->error);
+    }
+    
     $stmt->bind_param("i", $id);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -31,12 +43,12 @@
             const xhr = new XMLHttpRequest();
             xhr.open('POST', './cadastrar_jogos/update.php', true);
             xhr.onload = function () {
+                console.log(xhr.responseText); // Adicione esta linha para ver a resposta
                 if (xhr.status === 200) {
                     const response = JSON.parse(xhr.responseText);
                     if (response.success) {
                         alert('Produto atualizado com sucesso!');
-                        // Se necessário, recarregar a lista de produtos ou fazer outras ações
-                        // window.location.reload(); // Remova ou comente essa linha se não for necessário recarregar a página
+                        // window.location.reload(); // Recarregamento da página, se necessário
                     } else {
                         alert('Erro ao atualizar o produto: ' + response.error);
                     }
@@ -54,7 +66,7 @@
         <h2>Editar Produto</h2>
 
         <form id="ProdForm" method="post" enctype="multipart/form-data" onsubmit="atualizarProduto(event)">
-            <input type="hidden" name="id" value="<?php echo $row['ID']; ?>">
+            <input type="hidden" name="id" value="<?php echo htmlspecialchars($row['ID']); ?>">
 
             <label for="produto">Produto:</label>
             <input type="text" id="produto" name="produto" placeholder="Digite o nome do produto aqui..." value="<?php echo htmlspecialchars($row['PRODUTO']); ?>" required>

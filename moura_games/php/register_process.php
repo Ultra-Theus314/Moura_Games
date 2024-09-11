@@ -2,6 +2,10 @@
 session_start();
 include("conexao.php"); // Verifique o caminho correto para o arquivo de conexão
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST['username']);
     $email = trim($_POST['email']);

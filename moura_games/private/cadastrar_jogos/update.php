@@ -6,10 +6,10 @@ include("../../php/conexao.php");
 
 // Recupera os dados do POST
 $id = isset($_POST['id']) ? intval($_POST['id']) : 0;
-$produto = isset($_POST["produto"]) ? $_POST["produto"] : '';
-$tipo = isset($_POST["tipo"]) ? $_POST["tipo"] : '';
-$descricao = isset($_POST["descricao"]) ? $_POST["descricao"] : '';
-$valor = isset($_POST["valor"]) ? $_POST["valor"] : '';
+$produto = isset($_POST['produto']) ? $_POST['produto'] : '';
+$tipo = isset($_POST['tipo']) ? $_POST['tipo'] : '';
+$descricao = isset($_POST['descricao']) ? $_POST['descricao'] : '';
+$valor = isset($_POST['valor']) ? $_POST['valor'] : '';
 
 // Lida com o upload do arquivo
 $foto = isset($_POST['foto_old']) ? $_POST['foto_old'] : ''; // Default to old photo
@@ -37,9 +37,9 @@ if (isset($_FILES['foto']) && $_FILES['foto']['error'] == UPLOAD_ERR_OK) {
 }
 
 // Atualiza o banco de dados
-$sql = "UPDATE moura_games.tb_produtos SET produto=?, tipo=?, descricao=?, foto=?, valor=? WHERE id=?";
+$sql = "UPDATE moura_games.tb_produtos SET PRODUTO=?, TIPO=?, DESCRICAO=?, FOTO=?, VALOR=? WHERE ID=?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ssssssi", $produto, $tipo, $descricao, $foto, $valor, $id);
+$stmt->bind_param("sssssi", $produto, $tipo, $descricao, $foto, $valor, $id);
 
 $response = [];
 if ($stmt->execute()) {

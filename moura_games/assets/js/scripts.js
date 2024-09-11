@@ -84,8 +84,10 @@ function navigate(page)
             <option value="PC">PC</option>
         </select><br>
         
+        <div class="container">
         <label for="descricao">Descrição:</label>
-        <textarea id="descricao" name="descricao" rows="4" placeholder="Digite a descrição aqui..." required></textarea><br>
+        <textarea id="descricao" name="descricao" rows="4" placeholder="Digite a descrição aqui..." required></textarea>
+        </div>
         
         <label for="valor">Valor:</label>
         <input type="text" id="valor" placeholder="Digite o valor aqui..." name="valor"><br>
@@ -93,7 +95,7 @@ function navigate(page)
         <label for="foto">Foto:</label>
         <input class="btn btn-primary" type="file" id="foto" name="foto"><br><br>
         
-        <input class="btn btn-primary" type="submit" name="cadastrar" value="Cadastrar" />
+        <input class="btn btn-primary" type="submit" name="cadastrar" value="Cadastrar"/>
         </form>
     </section>
     </div>
@@ -137,7 +139,7 @@ function enviarFormulario() {
     const formData = new FormData(document.querySelector('#modal-body form'));
 
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', './cadastrar_jogos/update.php', true);
+    xhr.open('POST', '../private/cadastrar_jogos/update.php', true);
     xhr.onload = function () {
         if (xhr.status === 200) {
             try {

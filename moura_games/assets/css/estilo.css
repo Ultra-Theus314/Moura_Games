@@ -5,7 +5,6 @@
 
 /* Estilo padrão para PC */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -177,6 +176,20 @@ input[type="text"], input[type="email"], input[type="password"] {
   margin-top: 10px;
 }
 
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
 /* Rodapé fixo na parte inferior */
 footer {
 
@@ -240,6 +253,12 @@ footer p {
   margin-bottom: 20px;
 }
 
+.container_jogos h1 {
+  text-align: center;
+  color: #fff; /* Letras em branco */
+  margin-bottom: 20px;
+}
+
 .button-container {
   display: flex;
   justify-content: space-between; /* Distribui os botões de forma uniforme */
@@ -253,6 +272,20 @@ footer p {
   cursor: pointer;
   font-size: 16px;
   color: #fff;
+}
+
+.container_jogos label {
+  display: block;
+  margin-bottom: 2px; /* Diminui o espaço entre os labels e os inputs */
+  font-weight: bold;
+}
+
+.container_jogos input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .container_jogos button.submit-button {
@@ -349,12 +382,12 @@ footer p {
 /* Cartão de produto */
 .card {
   width: 300px;
-  height: 400px;
+  height: auto;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   text-align: center;
-  background-color: #34327d;;
+  background-color: #8861e0;;
   color: #fafafa;
   margin: 10px; /* Adiciona um espaço pequeno ao redor de cada card */
 }
@@ -417,9 +450,10 @@ h2 {
 
 .card-text {
   font-size: 0.875rem;
-  color: #555;
+  color: #ffffff;
+  line-height: 1.5;
+  text-align: justify; /* Alinha o texto de forma justificada */
 }
-
 .card-price {
   font-size: 1.5rem;
   font-weight: bold;
@@ -443,33 +477,5 @@ h2 {
   background-color: #218838;
 }
 
-/* Estilos do container de jogos */
-.container_jogos {
-  background-color: #34327d; /* Tom de azul claro */
-  font-family: Arial, sans-serif;
-  color: #000000; /* Letras em preto */
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 450px;
-  margin: 40px auto; /* Adiciona margem superior para afastar do rodapé */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
 
-.container_jogos h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
 
-.container_jogos label {
-  display: block;
-  margin-bottom: 2px; /* Diminui o espaço entre os labels e os inputs */
-  font-weight: bold;
-}
-
-.container_jogos input[type="text"] {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}

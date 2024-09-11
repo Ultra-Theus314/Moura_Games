@@ -66,18 +66,31 @@ if ($result->num_rows > 0) {
             echo '<div class="row">';
         }
 ?>
-<hr class="traco">
-    <div class="card">
-        <!-- Exibe a imagem com o caminho completo -->
-        <img class="card-img-top" src="<?php echo "./assets/img/cards/" . $row["FOTO"]; ?>" alt="<?php echo $produto; ?>">
-        <div class="card-body">
-            <h5 class="card-title"><?php echo $produto; ?> - <?php echo $plataforma; ?></h5>
-            <p class="card-text"><?php echo $descricao; ?></p>
-            <p class="card-price"><?php echo $valor; ?></p>
-            <!-- Botão de comprar -->
-            <a href="https://wa.me/5581992557192?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20jogo%20abaixo%20e%20gostaria%20de%20mais%20detalhes%3A%0A%0AC%C3%B3digo%3A%20$id%0ANome%3A%20$produto%0ACategoria%3A%20$tipo%0AValor%3A%20R%24%20$valor%0A%0APode%20me%20enviar%20mais%20informa%C3%A7%C3%B5es%3F%20Agrade%C3%A7o%21?produto_id=<?php echo $row['ID']; ?>" class="btn btn-primary">Comprar</a>
-        </div>
+
+<div class="card">
+    <!-- Exibe a imagem com o caminho completo -->
+    <img class="card-img-top" src="<?php echo "./assets/img/cards/" . $row["FOTO"]; ?>" alt="<?php echo $produto; ?>">
+    <div class="card-body">
+    <hr class="traco">
+        <h5 class="card-title"><?php echo $produto; ?> - <?php echo $plataforma; ?></h5>
+        <p class="card-text"><?php echo $descricao; ?></p>
+        <p class="card-price"><?php echo $valor; ?></p>
+        <!-- Botão de comprar -->
+        <?php
+        // Formata a mensagem para o WhatsApp
+        $mensagem = "Olá! Estou interessado em conhecer melhor os jogos disponíveis em seu site e tenho algumas perguntas: ";
+        $mensagem .= "Código do jogo: $id ";
+        $mensagem .= "Nome do jogo: $produto ";
+        $mensagem .= "Categoria: $plataforma ";
+        $mensagem .= "Valor: $valor ";
+        $mensagem .= "Pode me enviar mais informações sobre este jogo? Agradeço!";
+        // Codifica a mensagem para URL
+        $mensagemCodificada = urlencode($mensagem);
+        ?>
+        <a href="https://wa.me/5581992557192?text=<?php echo $mensagemCodificada; ?>" class="btn btn-primary">Comprar</a>
     </div>
+</div>
+
 <?php
     }
     // Fecha a última div
