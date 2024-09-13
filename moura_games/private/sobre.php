@@ -27,24 +27,12 @@ mysqli_stmt_close($stmt);
 mysqli_close($conn);
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre - Moura Games</title>
-    <style>
+<style>
     body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
         background-color: #2e2c6e;
-    }
-    .container {
-        width: 50%; /* Menos largo */
-        margin: auto;
-        overflow: hidden;
-        border-radius: 20px; /* Bordas arredondadas */
     }
     .main-content {
         padding: 20px;

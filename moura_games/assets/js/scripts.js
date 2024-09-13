@@ -60,45 +60,52 @@ function navigate(page)
   if (page === 'cadastrar') 
   {
       content.innerHTML = `
-    <div class="container_jogos">
+<div class="container_jogos">
     <section>
         <h2>Cadastrar Produto</h2>
         <form id="ProdForm">
-        <label for="produto">Produto:</label>
-        <input type="text" id="produto" name="produto" placeholder="Digite o nome do produto aqui..." required><br>
-        
-        <label for="tipo">Tipo:</label>
-        <select name="tipo" id="tipo">
-            <option value="GAME">JOGOS</option>
-            <option value="ARCADE">ARCADES</option>
-            <option value="CONSOLE">CONSOLE</option>
-            <option value="BONECO">MINIATURAS</option>
-            <option value="ACESSORIO">ACESSORIOS</option>
-        </select><br>
-        
-        <label>Plataforma:</label>
-        <select name="plataforma" id="plataforma">
-            <option value="PSN">PLAYSTATION</option>
-            <option value="XBOX">XBOX</option>
-            <option value="NINTENDO">NINTENDO</option>
-            <option value="PC">PC</option>
-        </select><br>
-        
-        <div class="container">
-        <label for="descricao">Descrição:</label>
-        <textarea id="descricao" name="descricao" rows="4" placeholder="Digite a descrição aqui..." required></textarea>
-        </div>
-        
-        <label for="valor">Valor:</label>
-        <input type="text" id="valor" placeholder="Digite o valor aqui..." name="valor"><br>
-        
-        <label for="foto">Foto:</label>
-        <input class="btn btn-primary" type="file" id="foto" name="foto"><br><br>
-        
-        <input class="btn btn-primary" type="submit" name="cadastrar" value="Cadastrar"/>
+            <label for="produto">Produto:</label>
+            <input type="text" id="produto" name="produto" placeholder="Digite o nome do produto aqui..." required><br>
+            
+            <label for="tipo">Tipo:</label>
+            <select name="tipo" id="tipo">
+                <option value="GAME">JOGOS</option>
+                <option value="ARCADE">ARCADES</option>
+                <option value="CONSOLE">CONSOLE</option>
+                <option value="BONECO">MINIATURAS</option>
+                <option value="ACESSORIO">ACESSORIOS</option>
+            </select><br>
+            
+            <label>Plataforma:</label>
+            <select name="plataforma" id="plataforma">
+                <option value="PSN">PLAYSTATION</option>
+                <option value="XBOX">XBOX</option>
+                <option value="NINTENDO">NINTENDO</option>
+                <option value="PC">PC</option>
+            </select><br>
+            
+            <div class="container">
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" rows="4" placeholder="Digite a descrição aqui..." required></textarea>
+            </div>
+            
+            <label for="valor">Valor:</label>
+            <input type="text" id="valor" placeholder="Digite o valor aqui..." name="valor"><br>
+            
+            <div class="btn-container">
+            <label class="file-upload">
+                    <input type="file" id="foto" name="foto">
+                <span>Escolha uma foto</span>
+                </label>
+            </div>
+
+            <div style="text-align: center; ">
+                <input class="btn btn-primary" id=wide-btn type="submit" name="cadastrar" value="Cadastrar"/>
+            </div>
         </form>
     </section>
-    </div>
+</div>
+
 `;
       document.getElementById('ProdForm').addEventListener('submit', function(event) 
       {

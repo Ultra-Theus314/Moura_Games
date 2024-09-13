@@ -34,12 +34,6 @@ body {
   }
 } 
 
-header, footer {
-  background-color: #343a40; /* Cor de fundo do header e footer */
-  color: white;
-  padding: 10px 20px;
-}
-
 .navbar-nav {
   display: flex;
   justify-content: center;
@@ -126,22 +120,24 @@ input[type="text"], input[type="email"], input[type="password"] {
   min-height: calc(100vh - 120px); /* Ajuste para considerar altura do header e footer */
   padding: 20px;
 }
-
+/* Estilo geral para o formulário de autenticação */
 .auth-form {
   background: #f8f9fa;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
+  max-width: 400px; /* Largura máxima padrão */
+  margin: auto;     /* Centraliza o formulário horizontalmente */
 }
 
+/* Estilo para os rótulos do formulário */
 .auth-form label {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
 }
 
+/* Estilo para os campos de entrada do formulário */
 .auth-form input {
   padding: 10px;
   margin-bottom: 20px;
@@ -149,8 +145,33 @@ input[type="text"], input[type="email"], input[type="password"] {
   border-radius: 5px;
 }
 
+/* Estilo específico para o input de arquivo */
+.auth-form input[type="file"] {
+  padding: 5px;      /* Reduz o padding interno do campo de arquivo */
+  max-width: 100%;   /* Faz com que o campo de arquivo ocupe 100% da largura disponível */
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .auth-form {
+    max-width: 90%;     /* Ajusta a largura máxima para 90% da largura da tela */
+    padding: 15px;      /* Reduz o padding interno do formulário */
+  }
+
+  .auth-form input {
+    padding: 8px;       /* Reduz o padding interno dos campos de entrada */
+    margin-bottom: 15px; /* Reduz o espaço inferior entre os campos de entrada */
+  }
+
+  .auth-form input[type="file"] {
+    padding: 5px;      /* Reduz o padding interno do campo de arquivo */
+    font-size: 14px;   /* Ajusta o tamanho da fonte dentro do campo de arquivo */
+  }
+}
+
 .auth-btn {
-  width: 100%;
+  width: 100%; /* Ocupa toda a largura disponível do contêiner pai */
+  max-width: 400px; /* Define uma largura máxima para o botão */
   padding: 10px;
   background-color: #007bff;
   border: none;
@@ -158,6 +179,8 @@ input[type="text"], input[type="email"], input[type="password"] {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  display: block; /* Faz o botão se comportar como um bloco para que ele possa ser centralizado */
+  margin: 0 auto; /* Centraliza o botão horizontalmente */
 }
 
 .auth-btn:hover {
@@ -192,41 +215,101 @@ textarea:focus {
 
 /* Rodapé fixo na parte inferior */
 footer {
-
-    background: #333;
-    color: #fff;
-    text-align: center;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0; /* Reduz o padding para diminuir a altura do footer */
+  box-sizing: border-box; /* Inclui o padding na largura total do footer */
 }
 
 footer p {
   margin: 0;
+  font-size: 14px; /* Ajusta o tamanho da fonte para caber melhor no footer */
 }
+
+/* Adicione uma margem inferior ao conteúdo principal para garantir que não fique atrás do footer */
+body {
+  margin-bottom: 40px; /* Aumente ou diminua conforme necessário */
+}
+
 
 .traco {
   color: #fafafa;
   height: 50px;
 }
 
-.bruce {
-  width: 100%;
-  max-width: 2000px; 
-  margin: 0 auto;
-  padding: 20px; 
-  text-align: center; 
-  font-size: 18px;
-  color: #333;
-  border-radius: 10px; 
+/* Estilo geral para o contêiner da página de sobre */
+.container {
+  max-width: 1200px;   /* Define uma largura máxima para a página */
+  margin: auto;        /* Centraliza o contêiner horizontalmente */
+  padding: 20px;       /* Adiciona algum espaçamento interno ao contêiner */
 }
 
-@media only screen and (max-width: 300px) {
-  .bruce {
-    font-size: 16px; 
-    max-height: 200px; 
+/* Estilo geral para o conteúdo principal */
+.main-content {
+  text-align: center;  /* Centraliza o texto */
+}
+
+/* Estilo para os títulos */
+.main-content h2 {
+  font-size: 2em;      /* Tamanho do título principal */
+  margin-bottom: 20px; /* Espaço inferior do título */
+}
+
+/* Estilo para os parágrafos */
+.main-content p {
+  font-size: 1em;      /* Tamanho do texto dos parágrafos */
+  line-height: 1.6;    /* Espaço entre linhas para melhor legibilidade */
+  margin-bottom: 20px; /* Espaço inferior dos parágrafos */
+}
+
+/* Estilo para o iframe do mapa */
+.main-content iframe {
+  width: 100%;         /* Ajusta a largura do iframe para 100% da largura do contêiner */
+  height: 300px;       /* Define uma altura fixa para o iframe */
+  border: 5px solid black; /* Borda preta para o iframe */
+}
+
+/* Estilo para o botão do WhatsApp */
+.whatsapp-button {
+  display: inline-block; /* Faz com que o botão não ocupe a linha inteira */
+  background-color: #25D366; /* Cor de fundo do WhatsApp */
+  color: #fff;            /* Cor do texto do botão */
+  padding: 10px 20px;    /* Espaçamento interno do botão */
+  border-radius: 5px;    /* Bordas arredondadas para o botão */
+  text-decoration: none; /* Remove o sublinhado do link */
+  font-size: 16px;       /* Tamanho da fonte do botão */
+  margin-top: 20px;      /* Espaço superior do botão */
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%;    /* Ajusta a largura máxima para 90% da largura da tela */
+    padding: 15px;    /* Reduz o padding interno do contêiner */
+  }
+  
+  .main-content h2 {
+    font-size: 1.5em; /* Reduz o tamanho do título para dispositivos móveis */
+    margin-bottom: 15px; /* Reduz o espaço inferior do título */
+  }
+
+  .main-content p {
+    font-size: 0.9em; /* Reduz o tamanho do texto dos parágrafos */
+    margin-bottom: 15px; /* Reduz o espaço inferior dos parágrafos */
+  }
+
+  .main-content iframe {
+    height: 200px;    /* Reduz a altura do iframe para dispositivos móveis */
+  }
+
+  .whatsapp-button {
+    font-size: 14px;  /* Reduz o tamanho da fonte do botão */
+    padding: 8px 16px; /* Reduz o padding interno do botão */
   }
 }
 
@@ -236,7 +319,7 @@ footer p {
   color: #000000; /* Letras em preto */
   padding: 20px;
   border-radius: 8px;
-  max-width: 400px;
+  max-width: 450px;
   margin: 40px auto; /* Adiciona margem superior para afastar do rodapé */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -304,6 +387,7 @@ footer p {
 .container_jogos button.cancel-button:hover {
   background-color: #5a6268; /* Tom de cinza mais escuro */
 }
+
 
 .avatar-container {
   position: relative;
@@ -373,10 +457,143 @@ footer p {
   color: #666;
 }
 
+.avatar-container {
+  flex-shrink: 0; /* Impede que a imagem do avatar encolha */
+}
+
+.avatar-container img {
+  width: 120px; /* Ajuste o tamanho da imagem do avatar */
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+  .profile-content {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+    max-width: 90%; /* Ajusta a largura máxima para telas menores */
+  }
+
+  .profile-info-container {
+    margin-left: 0;
+    margin-top: 15px; /* Adiciona espaço acima em telas menores */
+    width: 100%;
+  }
+
+  .avatar-container img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-info-container h1 {
+    font-size: 20px;
+  }
+
+  .profile-info-container p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .avatar-container img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-info-container h1 {
+    font-size: 18px;
+  }
+
+  .profile-info-container p {
+    font-size: 13px;
+  }
+}
+
 .carousel-inner img {
   width: 100%;
   height: 500px; /* Defina a altura desejada para suas imagens */
   object-fit: cover; /* Garante que a imagem cubra o contêiner, mantendo a proporção */
+}
+
+#foto {
+  display: none;
+}
+
+.btn-photo {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  text-align: center; /* Centraliza o texto */
+  padding: 4px; /* Reduz ainda mais o espaço interno */
+  border: 1px solid #ccc; /* Adiciona uma borda */
+  border-radius: 5px; /* Arredonda os cantos */
+  background-color: #f0f0f0; /* Define uma cor de fundo */
+  transition: background-color 0.5s ease, color 0.5s ease; /* Adiciona transição mais lenta para a mudança de cor */
+  margin-bottom: 10px; /* Adiciona espaço entre o botão e o próximo elemento */
+}
+
+.btn-photo:hover {
+  background-color: #8861e0; /* Cor de fundo roxa ao passar o mouse */
+  color: #ffffff; /* Cor do texto branca ao passar o mouse */
+}
+
+/* Estilo para o container do botão de upload */
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espaçamento entre os elementos */
+}
+
+/* Estilo do rótulo para o upload de arquivo */
+.file-upload {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 5px;
+  width: 100%; /* Ajusta a largura do botão para preencher o container */
+}
+
+/* Ocultar o input real de arquivo */
+.file-upload input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Estilo do botão de upload de arquivo */
+.file-upload span {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 12px 30px; /* Ajuste do padding para criar um botão mais longo */
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 1; /* Ajuste a altura da linha para centralizar o texto verticalmente */
+  font-weight: normal; /* Remove o negrito do texto */
+  transition: background-color 0.3s, border-color 0.3s;
+  width: 100%; /* Faz o botão preencher o container, se desejado */
+}
+
+.file-upload span:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+#wide-btn {
+  width: 100%; /* Largura padrão para dispositivos menores */
+    max-width: 400px; /* Largura máxima para dispositivos maiores */
+    padding: 10px; /* Adiciona padding para melhor usabilidade em dispositivos móveis */
+    box-sizing: border-box; /* Inclui o padding e a borda no cálculo da largura total */
 }
 
 /* Cartão de produto */
@@ -386,10 +603,80 @@ footer p {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  background-color: #8861e0;;
+  background-color: #8861e0;
   color: #fafafa;
   margin: 10px; /* Adiciona um espaço pequeno ao redor de cada card */
+}
+
+.card-img-top {
+  width: 100%;               /* Garante que a imagem ocupe toda a largura do card */
+  height: auto;              /* Mantém a proporção da imagem */
+}
+
+.card-body {
+  padding: 15px;             /* Espaçamento interno ao corpo do card */
+}
+
+.card-title {
+  font-size: 1.2em;          /* Tamanho do texto do título */
+  margin-bottom: 10px;       /* Espaço inferior do título */
+}
+
+.card-text {
+  margin-bottom: 10px;       /* Espaço inferior do texto */
+}
+
+.card-price {
+  font-weight: bold;         /* Destaca o preço com negrito */
+  margin-bottom: 20px;       /* Espaço inferior do preço */
+}
+
+.btn-primary {
+  display: inline-block;     /* Faz o botão não ocupar a linha inteira */
+  background-color: #007bff; /* Cor de fundo do botão */
+  color: #fff;               /* Cor do texto do botão */
+  padding: 10px 20px;        /* Espaçamento interno do botão */
+  border-radius: 5px;        /* Bordas arredondadas do botão */
+  text-decoration: none;     /* Remove o sublinhado do link */
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .card {
+    width: 90%;              /* Ajusta a largura do card para 90% da tela */
+    max-width: 400px;        /* Define uma largura máxima para o card */
+    margin: 20px auto;       /* Centraliza o card horizontalmente e adiciona margem vertical */
+  }
+
+  .card-body {
+    padding: 10px;           /* Reduz o padding interno no corpo do card */
+  }
+
+  .card-title {
+    font-size: 1em;          /* Reduz o tamanho do título para dispositivos móveis */
+  }
+
+  .card-text, .card-price {
+    font-size: 0.9em;        /* Reduz o tamanho do texto para dispositivos móveis */
+  }
+
+  .btn-primary {
+    padding: 8px 16px;       /* Ajusta o padding interno do botão */
+    font-size: 14px;         /* Reduz o tamanho da fonte do botão */
+  }
+}
+
+.admin {
+  background-color: #5f4dc3; /* Cor de fundo roxa mais clara */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  color: #000000 !important; /* Texto preto, garantido com !important */
+  font-weight: bold; /* Texto em negrito */
+  max-width: 600px; /* Largura máxima do container */
+  margin: 0 auto; /* Centraliza o container horizontalmente */
 }
 
 .card-type {
@@ -408,17 +695,40 @@ footer p {
   justify-content: center;
 }
 
-/* Responsividade */
+/* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
-  .card_mobile {
-    flex-direction: row;
-    align-items: center;
+  .container_jogos {
+    display: flex;            /* Usa o layout flexbox para o contêiner dos cartões */
+    flex-direction: row;     /* Alinha os cartões em linha */
+    align-items: center;     /* Alinha os cartões verticalmente */
+    justify-content: center; /* Alinha os cartões horizontalmente */
+    flex-wrap: wrap;         /* Permite que os cartões quebrem para a linha seguinte se não houver espaço suficiente */
+    width: 90%;              /* Ajusta a largura do contêiner para 90% da largura da tela */
+    max-width: 1200px;      /* Define uma largura máxima para o contêiner */
+    margin: auto;           /* Centraliza o contêiner horizontalmente */
+    padding: 20px;         /* Adiciona algum espaçamento interno ao contêiner */
+    box-sizing: border-box; /* Inclui padding e bordas na largura total do contêiner */
+  }
+
+  .container_jogos > .card {
+    margin: 10px;           /* Adiciona espaçamento entre os cartões */
+    width: 100%;            /* Faz com que os cartões ocupem toda a largura disponível na linha */
+    max-width: 150px;      /* Define uma largura máxima menor para os cartões */
+    box-sizing: border-box; /* Inclui padding e bordas na largura total do cartão */
   }
 }
 
 h2 {
   color: #fafafa;
   text-align: center; /* Centraliza o texto */
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: left;
+  align-items: left;
 }
 
 
@@ -432,7 +742,7 @@ h2 {
 }
 
 .card-img-top {
-  width: 200px;
+  width: 300px;
   height: 200px;
   object-fit: cover;
 }
@@ -477,5 +787,66 @@ h2 {
   background-color: #218838;
 }
 
+/* CSS geral para o carrossel */
+.carousel {
+  position: relative; /* Garante que o carrossel se posicione corretamente com base em seu contêiner pai */
+  width: 100vw; /* Faz com que o carrossel ocupe a largura total da viewport */
+  max-width: none; /* Remove a largura máxima para garantir que o carrossel use toda a largura disponível */
+  margin: 0; /* Remove margens para garantir que o carrossel use toda a largura disponível */
+}
 
+.carousel-inner {
+  position: relative; /* Garante que os itens do carrossel sejam posicionados corretamente */
+}
+
+.carousel-inner img {
+  width: 100%; /* Faz com que as imagens ocupem 100% da largura do contêiner do carrossel */
+  height: auto; /* Mantém a proporção da imagem */
+  max-height: 500px; /* Define uma altura máxima para as imagens, ajustando conforme necessário */
+}
+
+.carousel-caption {
+  position: absolute; /* Garante que a legenda apareça sobre a imagem */
+  bottom: 20px; /* Posiciona a legenda a uma distância do fundo */
+  left: 15px; /* Posiciona a legenda a uma distância da borda esquerda */
+  right: 15px; /* Posiciona a legenda a uma distância da borda direita */
+  text-align: center; /* Centraliza o texto da legenda */
+  color: #fff; /* Define a cor do texto da legenda */
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .carousel {
+    width: 100vw; /* Faz com que o carrossel ocupe a largura total da viewport em dispositivos móveis */
+  }
+
+  .carousel-inner img {
+    width: 100%; /* Imagens ocuparão 100% da largura do contêiner do carrossel */
+    height: auto; /* Mantém a proporção da imagem */
+    max-height: 400px; /* Ajusta a altura máxima para dispositivos móveis */
+  }
+
+  .carousel-caption {
+    font-size: 14px; /* Ajusta o tamanho da fonte para dispositivos móveis */
+    bottom: 10px; /* Reduz a distância do fundo para dispositivos móveis */
+    left: 10px; /* Reduz a distância da borda esquerda para dispositivos móveis */
+    right: 10px; /* Reduz a distância da borda direita para dispositivos móveis */
+  }
+
+  .carousel-control-prev, .carousel-control-next {
+    width: 50px; /* Ajusta o tamanho dos controles de navegação */
+    height: 50px; /* Ajusta o tamanho dos controles de navegação */
+  }
+
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    background-size: 100%, 100%; /* Garante que o ícone ocupe todo o botão */
+  }
+
+  /* Estilo para a imagem do card em dispositivos móveis */
+  .card-img-top {
+    width: 100%; /* Faz com que a imagem ocupe 100% da largura do contêiner pai */
+    height: 150px; /* Define uma altura menor para a imagem */
+    object-fit: cover; /* Cobre a área do contêiner sem distorcer a imagem */
+  }
+}
 

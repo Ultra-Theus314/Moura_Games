@@ -5,12 +5,6 @@
         padding: 0;
         background-color: #2e2c6e;
     }
-    .container {
-        width: 50%; /* Menos largo */
-        margin: auto;
-        overflow: hidden;
-        border-radius: 20px; /* Bordas arredondadas */
-    }
     .main-content {
         padding: 20px;
         background: #2e2c6e;
@@ -18,14 +12,6 @@
         margin-top: 20px;
         border-radius: 20px; /* Bordas arredondadas */
         text-align: center;
-    }
-    footer {
-        background: #2e2c6e;
-        color: #fff;
-        text-align: center;
-        padding: 10px 0;
-        margin-top: 20px;
-        border-radius: 20px; /* Bordas arredondadas */
     }
     .whatsapp-button {
         display: inline-block;

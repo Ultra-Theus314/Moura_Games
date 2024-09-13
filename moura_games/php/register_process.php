@@ -41,11 +41,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_stmt_store_result($stmt);
 
     if (mysqli_stmt_num_rows($stmt) > 0) {
-        header("Location: ../register.php?error=useroremailexists");
+        mysqli_stmt_close($stmt);
+        header("Location: ../register.php?error=useroremailtaken");
         exit();
     }
-
-    mysqli_stmt_close($stmt);
 
     // Processar o upload da foto de perfil
     $profile_picture = 'default-avatar.png'; // Valor padrão
@@ -53,8 +52,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] == UPLOAD_ERR_OK) {
         $fileTmpPath = $_FILES['profile_picture']['tmp_name'];
         $fileName = $_FILES['profile_picture']['name'];
-        $fileSize = $_FILES['profile_picture']['size'];
-        $fileType = $_FILES['profile_picture']['type'];
         $fileNameCmps = explode(".", $fileName);
         $fileExtension = strtolower(end($fileNameCmps));
 
@@ -82,7 +79,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Inserir novo usuário no banco de dados
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     $sql = "INSERT INTO moura_games.tb_clientes (username, email, password, profile_picture) VALUES (?, ?, ?, ?)";
     $stmt = mysqli_prepare($conn, $sql);
 
@@ -90,18 +86,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Erro na preparação da consulta: " . mysqli_error($conn));
     }
 
+    // Criptografar a senha antes de armazenar
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     mysqli_stmt_bind_param($stmt, "ssss", $username, $email, $hashed_password, $profile_picture);
 
     if (mysqli_stmt_execute($stmt)) {
-        header("Location: ../register.php?success=registered");
+        // Redirecionar para a página de login após o sucesso
+        header("Location: ..//public/login.php");
     } else {
-        header("Location: ../register.php?error=registrationfailed");
+        header("Location: /register.php?error=registrationfailed");
     }
 
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
-} else {
-    header("Location: ../register.php");
-    exit();
 }
 ?>

@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - MouraGames</title>
-</head>
-<body>
-    <main>
-        <section class="container_jogos">
-            <h1>Cadastrar Usuário</h1>
+<main>
+    <section class="container_jogos">
+        <h1>Cadastrar Usuário</h1>
             <form action="php/register_process.php" method="post" enctype="multipart/form-data" class="auth-form">
                 <label for="username">Usuário:</label>
                 <input type="text" id="username" name="username" required>
@@ -35,8 +27,6 @@
                 }
                 ?>
             </form>
-        </section>
-    </main>
+    </section>
+</main>
 
-</body>
-</html>
