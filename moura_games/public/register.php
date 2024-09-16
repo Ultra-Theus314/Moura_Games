@@ -1,6 +1,13 @@
 <main>
     <section class="container_jogos">
         <h1>Cadastrar Usuário</h1>
+
+        <?php if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== 'admin'): ?>
+                <div class="access-message">
+                    <p class="admin">Este conteúdo é restrito apenas para funcionários.</p>
+                </div>
+        <?php endif; ?>
+
             <form action="php/register_process.php" method="post" enctype="multipart/form-data" class="auth-form">
                 <label for="username">Usuário:</label>
                 <input type="text" id="username" name="username" required>

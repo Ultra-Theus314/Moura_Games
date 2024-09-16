@@ -213,29 +213,91 @@ textarea:focus {
   outline: none;
 }
 
-/* Rodapé fixo na parte inferior */
-footer {
-  background: #333;
-  color: #fff;
-  text-align: center;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  padding: 10px 0; /* Reduz o padding para diminuir a altura do footer */
-  box-sizing: border-box; /* Inclui o padding na largura total do footer */
+/* Estilos gerais para o footer */
+.footer {
+  background-color: #282c34; /* Cor de fundo escura */
+  color: #ffffff; /* Texto branco */
+  padding: 20px 0; /* Espaçamento interno */
+  position: fixed; /* Fixa o footer no fundo */
+  bottom: 0; /* Alinha ao fundo da tela */
+  width: 100%; /* Ocupa toda a largura da tela */
+  text-align: center; /* Centraliza o texto */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil para destaque */
+  z-index: 1000; /* Garante que o footer esteja acima de outros elementos */
 }
 
-footer p {
-  margin: 0;
-  font-size: 14px; /* Ajusta o tamanho da fonte para caber melhor no footer */
+/* Container do footer */
+.container_footer {
+  max-width: 1200px; /* Limita a largura máxima do conteúdo */
+  margin: 0 auto; /* Centraliza o container */
+  padding: 0 15px; /* Espaçamento interno lateral */
+}
+
+/* Estilo para o texto de direitos autorais */
+.footer .mb-0 {
+  margin-bottom: 10px; /* Espaçamento inferior */
+}
+
+/* Estilo para as informações de contato */
+.contact-info {
+  font-size: 14px; /* Tamanho da fonte menor */
+  line-height: 1.5; /* Altura da linha para melhorar a legibilidade */
+}
+
+/* Estilo para o telefone e o endereço */
+.phone,
+.address {
+  display: inline-block; /* Mantém os elementos na mesma linha */
+  margin: 0 10px; /* Espaçamento entre os elementos */
+}
+
+/* Adiciona uma pequena diferença entre telefone e endereço */
+.phone {
+  border-right: 1px solid #444; /* Linha divisória entre telefone e endereço */
+  padding-right: 10px; /* Espaçamento à direita do telefone */
+}
+
+/* Estilo para links dentro do footer */
+.footer a {
+  color: #ffffff; /* Cor do texto dos links */
+  text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+/* Estilo de hover para links dentro do footer */
+.footer a:hover {
+  text-decoration: underline; /* Sublinhado ao passar o mouse */
+  color: #dddddd; /* Cor mais clara ao passar o mouse */
+}
+
+/* Media query para dispositivos com largura máxima de 600px */
+@media (max-width: 600px) {
+  footer {
+    text-align: center; /* Alinha o texto ao centro para telas menores */
+    padding: 10px; /* Reduz o padding para economizar espaço */
+  }
+}
+
+@media (max-width: 768px) {
+  h2 {
+      font-size: 20px;
+  }
+  .map-container {
+      padding-bottom: 75%; /* Aspect Ratio 4:3 */
+  }
+}
+@media (max-width: 480px) {
+  h2 {
+      font-size: 18px;
+  }
+  .map-container {
+      padding-bottom: 100%; /* Aspect Ratio 1:1 */
+  }
 }
 
 /* Adicione uma margem inferior ao conteúdo principal para garantir que não fique atrás do footer */
 body {
   margin-bottom: 40px; /* Aumente ou diminua conforme necessário */
 }
-
 
 .traco {
   color: #fafafa;
@@ -849,4 +911,3 @@ h2 {
     object-fit: cover; /* Cobre a área do contêiner sem distorcer a imagem */
   }
 }
-

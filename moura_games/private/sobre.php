@@ -28,12 +28,6 @@ mysqli_close($conn);
 ?>
 
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #2e2c6e;
-    }
     .main-content {
         padding: 20px;
         background: #2e2c6e;
@@ -41,14 +35,6 @@ mysqli_close($conn);
         margin-top: 20px;
         border-radius: 20px; /* Bordas arredondadas */
         text-align: center;
-    }
-    footer {
-        background: #2e2c6e;
-        color: #fff;
-        text-align: center;
-        padding: 10px 0;
-        margin-top: 20px;
-        border-radius: 20px; /* Bordas arredondadas */
     }
     .whatsapp-button {
         display: inline-block;
@@ -75,18 +61,18 @@ mysqli_close($conn);
             <p>Se você tiver alguma dúvida ou sugestão, não hesite em nos contatar. Estamos sempre aqui para ajudar!</p>
             <div style="text-align: center; margin-top: 20px;">
                 <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d246.86494160375125!2d-35.2949083684528!3d-8.117863274210988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1725279667035!5m2!1spt-BR!2sbr" 
-                width="600" 
-                height="400" 
-                style="border: 5px solid black;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d246.86494160375125!2d-35.2949083684528!3d-8.117863274210988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1725279667035!5m2!1spt-BR!2sbr" 
+                    width="600" 
+                    height="400" 
+                    style="border: 5px solid black;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
-            <a href="https://wa.me/5581992557192?text=Ol%C3%A1%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" class="whatsapp-button"><i class="fas fa-phone"></i> Chamar no WhatsApp </a>
         </div>
     </div>
+<br>
 </body>
 </html>
 

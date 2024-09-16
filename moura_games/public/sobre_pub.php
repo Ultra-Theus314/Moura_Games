@@ -1,10 +1,5 @@
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #2e2c6e;
-    }
+
     .main-content {
         padding: 20px;
         background: #2e2c6e;
@@ -47,9 +42,9 @@
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
-            <a href="https://wa.me/5581992557192?text=Ol%C3%A1%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" class="whatsapp-button"><i class="fas fa-phone"></i> Chamar no WhatsApp</a>
         </div>
     </div>
+<br>
 </body>
 </html>
 
